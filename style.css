@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.sky {
+  width: 100%;
+  flex-grow: 1;
+  background-color: rgb(135, 206, 235, 0);
+  opacity: 1;
+  z-index: -2;
+}
+
+.sky.on {
+  animation: sky 1.5s both;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  height: 80px;
+  width: 80px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.sun.on {
+  animation: sun 1s 0.5s ease both;
+}
+
+.tree {
+  position: absolute;
+  width: 20px;
+  height: 300px;
+  background-color: brown;
+  bottom: 180px;
+  left: 130%;
+}
+
+.tree.on {
+  animation: tree 0.6s 0.9s linear both;
+}
+
+.leaves {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  border-radius: 50%;
+  transform: translate(-40%, -50%);
+}
+
+.home {
+  position: absolute;
+  bottom: 180px;
+  left: -100%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 250px;
+  background-color: rgb(207, 207, 187);
+}
+
+.home.on {
+  animation: home 1s linear both;
+}
+
+.roof {
+  position: absolute;
+  z-index: -1;
+  bottom: 1300px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0);
+  width: 297px;
+  height: 297px;
+  background-color: black;
+}
+
+.roof.on {
+  animation: roof 1s 0.6s linear both;
+}
+
+.door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 0;
+  background-color: rgb(124, 6, 6);
+}
+
+.door.on {
+  animation: door 0.4s 1.7s both;
+}
+
+.window1 {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.window1.on {
+  animation: window 0.4s 1.7s both;
+}
+
+.window2 {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+.window2.on {
+  animation: window 0.4s 1.8s both;
+}
+
+img {
+  width: 100px;
+}
+
+img.on {
+  animation: img 3s 2.7s both;
+}
+
+.grass {
+  height: 180px;
+  width: 100%;
+  opacity: 0;
+  background-color: lightgreen;
+}
+
+.grass.on {
+  animation: grass 1s both;
+}
+
+button {
+  position: fixed;
+  top: 8%;
+  left: 8%;
+  background-color: skyblue;
+  border: 3px solid white;
+  width: 20%;
+  min-width: 200px;
+  height: 60px;
+  color: white;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "roboto", sans-serif;
+  cursor: pointer;
+  /* transition: 0.3s linear; */
+}
+
+button:hover {
+  background-color: cadetblue;
+}
+
+/* ANIMACJE */
+
+@keyframes grass {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sky {
+  0% {
+    background-color: rgb(135, 206, 235, 0);
+  }
+
+  100% {
+    background-color: rgb(135, 206, 235, 1);
+  }
+}
+
+@keyframes sun {
+  0% {
+    top: 50%;
+    left: -30%;
+  }
+
+  100% {
+    top: 18%;
+    left: 20%;
+  }
+}
+
+@keyframes tree {
+  0% {
+    left: 130%;
+  }
+
+  100% {
+    left: 85%;
+  }
+}
+
+@keyframes home {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes roof {
+  0% {
+    bottom: 1300px;
+    transform: translateX(-50%) rotate(0);
+  }
+
+  100% {
+    bottom: 281px;
+    transform: translateX(-50%) rotate(405deg);
+  }
+}
+
+@keyframes door {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 130px;
+  }
+}
+
+@keyframes window {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes img {
+  0% {
+    margin-top: 100px;
+  }
+
+  40% {
+    margin-top: 40px;
+  }
+
+  90% {
+    margin-top: 40px;
+  }
+
+  100% {
+    margin-top: 100%;
+  }
+}
